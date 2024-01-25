@@ -1,0 +1,65 @@
+.navbar {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+
+    @include media(0, 1440px) {
+        top: 30px;
+    }
+    @include tablet() {
+        top: 20px;
+    }
+}
+
+.navbar__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $white;
+    border-radius: 100px;
+    padding-block: 16px;
+    padding-inline: 30px;
+}
+
+// Logo responsive mobile devices
+.logo_start {
+    visibility: hidden;
+
+    @include tablet() {
+        width: 115px;
+        height: 63px;
+    }
+
+    @include mobile() {
+        visibility: visible;
+
+        img {
+            width: 95px;
+            height: 47px;
+        }
+    }
+}
+
+//Logo responsive Desktop devices 
+.logo {
+    @include mobile() {
+        visibility: hidden;
+    }
+}
+
+// languges label for 
+label[for="lang"] {
+    position: relative;
+}
+
+.select_view {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+#lang {
+    visibility: hidden;
+    position: absolute;
+}
+

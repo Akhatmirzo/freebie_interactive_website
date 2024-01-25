@@ -1,0 +1,133 @@
+.curses {
+    width: 100%;
+    background-color: $darken;
+    padding-top: 100px;
+    padding-bottom: 250px;
+    position: relative;
+
+    @include media(0px, 1440px) {
+        padding-bottom: 180px;
+    }
+
+    @include tablet() {
+        padding-bottom: 40px;
+    }
+}
+
+.curses__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 200px;
+
+    @include media(0px, 1360px) {
+        flex-direction: column;
+        gap: 150px;
+    }
+}
+
+.curses__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include media(0px, 1360px) {
+        min-width: 555px;
+        align-items: center;
+    }
+
+    @include mobile() {
+        min-width: 100%;
+        margin-top: 50px;
+    }
+}
+
+.curses__content span {
+    max-width: 555px;
+    color: $yellow;
+
+    /* Website/Paragraph 1 */
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.4px;
+    margin-bottom: 20px;
+
+    @include mobile() {
+        font-size: 20px;
+    }
+}
+
+.curses__content h2 {
+    max-width: 530px;
+    color: $white;
+
+    /* Website/Heading 4 */
+    font-size: 50px;
+    font-weight: 700;
+
+    @include mobile() {
+        font-size: 36px
+    }
+}
+
+.primary__white-btn {
+    @include primaryBtn($white);
+    margin-top: 60px;
+}
+
+// Curses cards 
+.curses__cards {
+    max-width: 760px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+
+    @include media(0px, 1360px) {
+        gap: 40px;
+    }
+
+    @include mobile() {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+.curses__card {
+    height: 400px;
+    margin-top: 50px;
+    @include cursesCard() {
+        border-radius: 57px
+    };
+}
+
+.curses__card:nth-child(odd) {
+    margin-top: -80px;
+}
+
+.curses__cards {
+
+    .curses__card:nth-child(2),
+    .curses__card:nth-child(3) {
+        background-color: $yellow;
+    }
+
+    @include mobile() {
+
+        .curses__card:nth-child(2),
+        .curses__card:nth-child(3) {
+            background-color: $white;
+        }
+
+        .curses__card:nth-child(2),
+        .curses__card:nth-child(4) {
+            background-color: $yellow;
+        }
+    }
+}
+
+.curses__card:nth-child(3) {
+    @include mobile() {
+        margin-top: 30px;
+    }
+}
+
